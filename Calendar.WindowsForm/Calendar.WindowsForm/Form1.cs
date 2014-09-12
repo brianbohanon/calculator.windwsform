@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Calendar.WindowsForm
+namespace Calculator.WindowsForm
 {
     public partial class Form1 : Form
     {
@@ -16,17 +16,21 @@ namespace Calendar.WindowsForm
         {
             InitializeComponent();
         }
+        
+        Calculator Calc = new Calculator();
 
         private void button1_Click(object sender, EventArgs e)
         {
             double val1 = double.Parse(textBox1.Text);
             double val2 = double.Parse(textBox2.Text);
-            textBox3.Text = AddNumbers(val1, val2).ToString();
-        }
+            textBox3.Text = Calc.AddNumbers(val1, val2).ToString();
+        }        
 
-        double AddNumbers(double val1, double val2)
+        private void button2_Click(object sender, EventArgs e)
         {
-            return val1 + val2;
+            double val1 = double.Parse(textBox1.Text);
+            double val2 = double.Parse(textBox2.Text);
+            textBox3.Text = Calc.MultiplyNumbers(val1, val2).ToString();
         }
     }
 }
