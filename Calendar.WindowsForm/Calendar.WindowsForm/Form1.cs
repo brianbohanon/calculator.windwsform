@@ -19,10 +19,14 @@ namespace Calendar.WindowsForm
 
         private void button1_Click(object sender, EventArgs e)
         {
-            double val1, val2;
-            val1 = double.Parse(textBox1.Text);
-            val2 = double.Parse(textBox2.Text);
-            textBox3.Text = (val1 + val2).ToString();
+            double val1 = double.Parse(textBox1.Text);
+            double val2 = double.Parse(textBox2.Text);
+            textBox3.Text = AddNumbers(val1, val2).ToString();
+        }
+
+        double AddNumbers(double val1, double val2)
+        {
+            return val1 + val2;
         }
     }
 }
